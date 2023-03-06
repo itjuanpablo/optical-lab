@@ -1,46 +1,52 @@
-create database adm;
+CREATE DATABASE opticalab;
 
-use adm;
+USE opticalab;
 
-create table users (
-  id not null auto_increment,
-  login varchar(30) not null,
-  password varchar(50) not null,
-  primary key (id)
-) default charset = utf8;
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT,
+  login VARCHAR(255) NOT NULL,
+  senha VARCHAR(255) NOT NULL,
+  PRIMARY KEY(id)
+);
 
-create database data;
 
-use data;
+CREATE TABLE clientes (
+  id INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(255) NOT NULL,
+  endereco VARCHAR(255),
+  email VARCHAR(255),
+  celular INT(20) NOT NULL,
+  telefone VARCHAR(20),
+  olhodireito DECIMAL(10,2) NOT NULL,
+  olhoesquerdo DECIMAL(10,2) NOT NULL,
+  observacao VARCHAR(255),
+  PRIMARY KEY(id)
+);
 
-create table cliente (
-  id_user not null auto_increment,
-  nome varchar(30) not null,
-  cidade varchar(50) not null,
-  cpf int(11) not null,
-  nascimento date not null,
-  telefone int(20) not null,
-  celular int(20) not null
-  olhododireito decimal(5,2) not null,
-  olhoesquerdo decimal(5,2) not null
-  observacao varchar(30),
-  primary key(id),
-  secondary key(id_compra)
-) default charset = utf8;
+INSERT INTO clientes (nome, endereco, email, celular, telefone, olhodireito, olhoesquerdo, observacao, medico)
+VALUES ('Daniel Anastácio', 'Rua dos Pomares, 123', 'daniel@email.com', '(35) 99234-7666', '(11) 1234-5678', '2.75', '-4.50', 'O Daniel irá retornar ao médico no dia 10/03/2023','Dr. José da Silva');
 
-create table compra (
-  id_compra not null auto_increment,
-  data date not null,
-  valor decimal(5,2) not null,
-  primary key (id_compra),
-  secondary key (id_user)
-) default charset = utf8;
 
-create table medicos (
-  id_medico not null auto_increment,
-  nome varchar(30) not null,
-  crm int(30) not null,
-  cidade varchar(30) not null,
-  clinica varchar(30) not null
-  primary key (id_medico)
-) default charset = utf8;
+SELECT * FROM clientes;
+
+
+CREATE TABLE compras (
+    id INT NOT NULL AUTO_INCREMENT,
+    id_cliente INT NOT NULL,
+    data_compra DATE,
+    valor DECIMAL(10,2),
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id)
+);
+
+INSERT INTO compras (id_cliente, data_compra, valor)
+VALUES
+  (1, '2023-02-11', 200.00),
+  (1, '2023-02-15', 150.00),
+  (2, '2023-03-01', 300.00),
+  (2, '2023-03-03', 250.00),
+  (1, '2023-03-05', 175.00);
+
+SELECT * FROM compras;
+SELECT * FROM compras WHERE data_compra = '2023-03-01';
+SELECT * FROM compras WHERE id_cliente = '1';
