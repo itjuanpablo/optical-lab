@@ -23,8 +23,6 @@ CREATE TABLE clientes (
   PRIMARY KEY(id)
 );
 
-ALTER TABLE clientes ADD COLUMN medico VARCHAR(255);
-
 INSERT INTO clientes (nome, endereco, email, celular, telefone, olhodireito, olhoesquerdo, observacao, medico)
 VALUES ('Daniel Anastácio', 'Rua dos Pomares, 123', 'daniel@email.com', '(35) 99234-7666', '(11) 1234-5678', '2.75', '-4.50', 'O Daniel irá retornar ao médico no dia 10/03/2023','Dr. José da Silva');
 
@@ -49,8 +47,6 @@ INSERT INTO compras (id_cliente, data_compra, valor)
 VALUES
   (1, '2023-02-11', 200.00),
   (1, '2023-02-15', 150.00),
-  (2, '2023-03-01', 300.00),
-  (2, '2023-03-03', 250.00),
   (1, '2023-03-05', 175.00);
 
 SELECT * FROM compras;
