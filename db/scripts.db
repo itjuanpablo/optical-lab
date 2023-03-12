@@ -29,6 +29,10 @@ INSERT INTO clientes (nome, endereco, email, celular, telefone, olhodireito, olh
 VALUES ('Daniel Anastácio', 'Rua dos Pomares, 123', 'daniel@email.com', '(35) 99234-7666', '(11) 1234-5678', '2.75', '-4.50', 'O Daniel irá retornar ao médico no dia 10/03/2023','Dr. José da Silva');
 
 
+INSERT INTO clientes (nome, endereco, email, celular, telefone, olhodireito, olhoesquerdo, observacao, medico)
+VALUES ('Daniel Anastácio', 'Rua dos Pomares, 123', 'daniel@email.com', '(35) 99234-7666', '(11) 1234-5678', '2.75', '-4.50', 'O Daniel irá retornar ao médico no dia 10/03/2023','Dr. José da Silva');
+
+
 SELECT * FROM clientes;
 
 
@@ -51,4 +55,5 @@ VALUES
 
 SELECT * FROM compras;
 SELECT * FROM compras WHERE data_compra = '2023-03-01';
+SELECT * FROM compras WHERE id_cliente = '1';
 SELECT * FROM compras WHERE id_cliente = '1';
