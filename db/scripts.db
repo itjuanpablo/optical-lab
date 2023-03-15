@@ -14,25 +14,29 @@ CREATE TABLE clientes (
   id INT NOT NULL AUTO_INCREMENT,
   nome VARCHAR(255) NOT NULL,
   endereco VARCHAR(255),
+  cpf VARCHAR(11) NOT NULL,
   email VARCHAR(255),
   celular INT(20) NOT NULL,
   telefone VARCHAR(20),
   olhodireito DECIMAL(10,2) NOT NULL,
   olhoesquerdo DECIMAL(10,2) NOT NULL,
   observacao VARCHAR(255),
+  medico VARCHAR(255), 
   PRIMARY KEY(id)
 );
 
-INSERT INTO clientes (nome, endereco, email, celular, telefone, olhodireito, olhoesquerdo, observacao, medico)
-VALUES ('Daniel Anastácio', 'Rua dos Pomares, 123', 'daniel@email.com', '(35) 99234-7666', '(11) 1234-5678', '2.75', '-4.50', 'O Daniel irá retornar ao médico no dia 10/03/2023','Dr. José da Silva');
-
-
-INSERT INTO clientes (nome, endereco, email, celular, telefone, olhodireito, olhoesquerdo, observacao, medico)
-VALUES ('Daniel Anastácio', 'Rua dos Pomares, 123', 'daniel@email.com', '(35) 99234-7666', '(11) 1234-5678', '2.75', '-4.50', 'O Daniel irá retornar ao médico no dia 10/03/2023','Dr. José da Silva');
-
+INSERT INTO clientes (nome, endereco, cpf, email, celular, telefone, olhodireito, olhoesquerdo, observacao, medico)
+VALUES 
+('José Silva', 'Rua dos Pomares, 123', '07519716694','juan@email.com', '35992347666', '1112345678', '2.75', '-4.50', 'O Jose irá retornar ao médico no dia 10/03/2023','Dr. José da Silva'),
+('Ricardo Amorim', 'Rua dos Pomares, 123', '07519716894','juan@email.com', '3599234-7666', '1112345678', '2.75', '-4.50', 'O Jose irá retornar ao médico no dia 10/03/2023','Dr. José da Silva'),
+('Samuel Venancio', 'Rua dos Pomares, 123', '07519516694','juan@email.com', '35992347666', '1112345678', '2.75', '-4.50', 'O Jose irá retornar ao médico no dia 10/03/2023','Dr. José da Silva'),
+('Fabio Cruentes', 'Rua dos Pomares, 123', '07319716694','juan@email.com', '35992347666', '1112345678', '2.75', '-4.50', 'O Jose irá retornar ao médico no dia 10/03/2023','Dr. José da Silva'),
+('Pablo Silva', 'Rua dos Pomares, 123', '07919716694','juan@email.com', '35992347666', '1112345678', '2.75', '-4.50', 'O Jose irá retornar ao médico no dia 10/03/2023','Dr. José da Silva'),
+('Miguel Monteiro', 'Rua dos Pomares, 123', '07819716694','juan@email.com', '35992347666', '1112345678', '2.75', '-4.50', 'O Jose irá retornar ao médico no dia 10/03/2023','Dr. José da Silva'),
+('José Ricardo', 'Rua dos Pomares, 123', '07517716694','juan@email.com', '35992347666', '1112345678', '2.75', '-4.50', 'O Jose irá retornar ao médico no dia 10/03/2023','Dr. José da Silva'),
+('Ana Silva', 'Rua dos Pomares, 123', '07511716694','juan@email.com', '35992347666', '1112345678', '2.75', '-4.50', 'O Jose irá retornar ao médico no dia 10/03/2023','Dr. José da Silva');
 
 SELECT * FROM clientes;
-
 
 CREATE TABLE compras (
     id INT NOT NULL AUTO_INCREMENT,
@@ -46,10 +50,17 @@ CREATE TABLE compras (
 INSERT INTO compras (id_cliente, data_compra, valor)
 VALUES
   (1, '2023-02-11', 200.00),
-  (1, '2023-02-15', 150.00),
-  (1, '2023-03-05', 175.00);
+  (2, '2023-02-15', 150.00),
+  (3, '2023-03-05', 300.00),
+  (4, '2023-02-11', 500.00),
+  (5, '2023-02-15', 750.00),
+  (6, '2023-03-05', 375.00),
+  (7, '2023-02-11', 220.00),
+  (8, '2023-02-15', 120.00),
+  (8, '2023-03-05', 125.00);
 
 SELECT * FROM compras;
-SELECT * FROM compras WHERE data_compra = '2023-03-01';
+SELECT * FROM compras WHERE data_compra = '2023-02-15';
 SELECT * FROM compras WHERE id_cliente = '1';
-SELECT * FROM compras WHERE id_cliente = '1';
+SELECT * FROM clientes WHERE cpf = '07519716694';
+SELECT * FROM clientes WHERE nome LIKE '%José%';
