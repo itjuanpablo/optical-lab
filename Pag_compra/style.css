@@ -1,0 +1,56 @@
+.logo {
+  width: 150px;
+  padding-top: 10px;
+}
+
+body {
+  margin: 0;
+  height: 0;
+  width: 100vw;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: #2c2a2a;
+  padding: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+ul li:nth-child(2) a {
+  color: red;
+  margin-left: 10px;
+}
+
+/**/
+
+.search-box :hover, .search-box :focus{
+  background-color: white;
+}
+
+.search-text {
+  margin: 1px solid;
+  background-color: #2c2a2a;
+  border-radius: 15px;
+  box-shadow: none;
+  border: 1px solid white;
+  padding-left: 10px;
+}
+
+.user {
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: medium;
+}

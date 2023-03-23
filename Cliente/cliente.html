@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Danpha's</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/Danphas-main//Index/index.html"><img src="/Danphas-main/Img/logo.png" alt="logo" class="logo"></a>
+        <div class="search-box">
+            <input type="text" class="search-text" placeholder="Pesquisar...">
+        </div>
+        <ul>
+            <li><span class='user'>Nome do usuário</span></li>
+            <li><a href="/Danphas-main//Login/login.html">Sair</a></li>
+        </ul>
+    </nav>
+    <br>
+    <div class="box">
+        <div id="edit-client">
+            <a href="#"><img class="edit-img" src="/Danphas-main/Img/edit.png" alt="Editar"></a>
+        </div>
+        <div class="box-client">
+            <div id="direita">
+                <span style="float: right; margin: 5px;">
+                    Data de Cadastro :
+                    <span class="tbold">Date </span><br>
+                    Usuario Responsavel :
+                    <span class="tbold">User </span><br>
+                    Celular :
+                    <span class="tbold">Celular </span><br>
+                    Telefone :
+                    <span class="tbold">Telefone </span><br>
+                </span>
+            </div>
+            <div id="esquerda" style="margin: 5px;">
+                Cliente ID :
+                <span class="tbold">ID </span><br>
+                Nome Cliente :
+                <span class="tbold">Nome </span><br>
+                CPF/CNPJ :
+                <span class="tbold">CPF </span><br>
+                Cidade :
+                <span class="tbold">Cidade </span><br>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="table-client">
+        <div class="d-table">
+            <div class="b-compra">
+                <button><a href="#" style="text-decoration: none; color: white;">Nova Compra</a></button>
+            </div>
+            <div class="data-table" style="float: right; margin-right: 10px;">
+                <label for="filtro">Filtro</label>
+                <select id="filtro" name="filtro">
+                    <option value="id-filtro"></option>
+                    <option value="id-filtro">ID Compra</option>
+                    <option value="oe">OE</option>
+                    <option value="od">OD</option>
+                    <option value="valor">Valor</option>
+                    <option value="dia">Dia</option>
+                    <option value="responsavel">Responsável</option>
+                </select>
+            </div>
+        </div>
+
+        <table class="table-orders">
+            <thead>
+                <tr role="row" style="border-top: 1px solid;">
+                    <th>
+                        <div>
+                            <a href="#">ID Compra</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <a href="#">OE</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <a href="#">OD</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <a href="#">Valor</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <a href="#">Observações</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <a href="#">Dia</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <a href="#">Responsavel</a>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <td><a href="#">00001</a></td>
+                <td>4.5</td>
+                <td>4.5</td>
+                <td>R$ 790,00</td>
+                <td>Cliente tambem comprou uma armação meio gay</td>
+                <td>03/03/2020</td>
+                <td>Cleitin</td>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>
